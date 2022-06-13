@@ -1,0 +1,20 @@
+from fastapi import FastAPI, Response, status
+from pydantic import BaseModel
+
+class Post(BaseModel):
+    title: str
+    #nb_views : int 
+
+posts = {
+    1: Post(title="Hello")
+}
+
+app = FastAPI()
+@app.put('/posts/{id}')
+async def update_create(id:int, post:Post, response:Response):
+    if id not in posts:
+        response.status_code = status.HTTP_201_CREATED
+    posts[id] = post
+    return posts[id] 
+
+#
