@@ -1,7 +1,7 @@
 from typing import Dict
 
-from chapter3_project.models.users import User
-from chapter3_project.models.posts import Post
+from models.users import User
+from models.posts import Post
 
 
 class DummyDatabase:

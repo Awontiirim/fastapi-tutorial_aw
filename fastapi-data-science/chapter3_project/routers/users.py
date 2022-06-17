@@ -1,9 +1,8 @@
 from typing import List
-from django.db import router
 from fastapi import APIRouter, HTTPException, status
-from chapter3_project.models.users import User, UserCreate
+from models.users import User, UserCreate
 from typing import List
-from chapter3_project import db
+import db
 router = APIRouter()
 
 @router.get("/")
